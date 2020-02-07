@@ -9,6 +9,8 @@ category2 = Category.new('name' => 'Gravel')
 category2.save()
 category3 = Category.new('name' => 'Hardtail')
 category3.save()
+category4 = Category.new('name' => 'Enduro')
+category4.save()
 
 manufacturer1 = Manufacturer.new(
   'name' => 'Canyon',
@@ -22,3 +24,14 @@ manufacturer3 = Manufacturer.new(
   'name' => 'Genesis',
   'contact_details' => '0800 529504')
   manufacturer3.save()
+
+product1 = Product.new(
+  'name' => 'Spectral',
+  'description' => 'The Spectral is simply unmatched in its class […]. Handling and suspension are superb throughout the whole range.',
+  'buy_cost' => 1700,
+  'sell_price' => 2200,
+  'manufacturer_id' => manufacturer1.id,
+  'category_id' => category4.id
+)
+
+product1.save()
