@@ -29,10 +29,17 @@ class Product
     results = SqlRunner.run(sql, values)
     @id = results.first['id'].to_i
   end
-  
+
   def self.delete_all()
     sql = "DELETE FROM products"
     SqlRunner.run(sql)
+  end
+
+  def self.all
+    sql = "SELECT * FROM products"
+    results = SqlRunner.run(sql)
+    products = results.map {|data| Product.new(data)}
+    return products
   end
 
 end
