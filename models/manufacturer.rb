@@ -23,5 +23,12 @@ class Manufacturer
     SqlRunner.run(sql)
   end
 
+  def self.all
+    sql = "SELECT * FROM manufacturers"
+    results = SqlRunner.run(sql)
+    manufacturers = results.map {|data| Manufacturer.new(data)}
+    return manufacturers
+  end
+
 
 end
