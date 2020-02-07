@@ -5,6 +5,7 @@ require_relative('../models/product')
 require_relative('../models/stock')
 
 Stock.delete_all()
+Product.delete_all()
 
 category1 = Category.new('name' => 'Road')
 category1.save()
