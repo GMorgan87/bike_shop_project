@@ -5,6 +5,7 @@ class Product
   attr_reader :id, :name, :description, :buy_cost, :sell_price, :manufacturer_id, :category_id
 
   def initialize(options)
+    @id = options['id'].to_i if options['id']
     @name = options['name']
     @description = options['description']
     @buy_cost = options['buy_cost']

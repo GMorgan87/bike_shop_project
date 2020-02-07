@@ -2,7 +2,10 @@ require_relative('../db/sql_runner')
 
 class Stock
 
+  attr_reader :id, :product_id, :quantity
+
   def initialize(options)
+    @id = options['id'].to_i if options['id']
     @product_id = options['product_id']
     @quantity = options['quantity']
   end
@@ -22,6 +25,13 @@ class Stock
   def self.delete_all()
     sql = "DELETE FROM stock"
     SqlRunner.run(sql)
+  end
+
+  def self.all
+    sql = "SELECT * FROM stock"
+    results = SqlRunner.run(sql)
+    stock = results.map {|data| Stock.new(data)}
+    return stock
   end
 
 end
