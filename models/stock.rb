@@ -2,7 +2,8 @@ require_relative('../db/sql_runner')
 
 class Stock
 
-  attr_reader :id, :product_id, :quantity
+  attr_reader :id, :product_id
+  attr_accessor :quantity
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -20,6 +21,14 @@ class Stock
     values = [@product_id, @quantity]
     results = SqlRunner.run(sql, values)
     @id = results.first['id'].to_i
+  end
+
+  def update
+    sql = "UPDATE stock SET
+    (product_id, quantity) = ($1, $2)
+    WHERE id = $3"
+    values = [@product_id, @quantity, @id]
+    SqlRunner.run(sql, values)
   end
 
   def self.delete_all()
