@@ -29,7 +29,7 @@ class Product
     results = SqlRunner.run(sql, values)
     @id = results.first['id'].to_i
   end
-
+  
   def self.delete_all()
     sql = "DELETE FROM products"
     SqlRunner.run(sql)
