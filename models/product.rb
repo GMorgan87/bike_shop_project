@@ -27,7 +27,7 @@ class Product
         RETURNING id"
     values = [@name,@description, @buy_cost, @sell_price, @manufacturer_id, @category_id]
     results = SqlRunner.run(sql, values)
-    id = results.first['id'].to_i
+    @id = results.first['id'].to_i
   end
 
 end
