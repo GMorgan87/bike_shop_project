@@ -4,6 +4,8 @@ require_relative('../models/manufacturer')
 require_relative('../models/product')
 require_relative('../models/stock')
 
+Stock.delete_all()
+
 category1 = Category.new('name' => 'Road')
 category1.save()
 category2 = Category.new('name' => 'Gravel')
