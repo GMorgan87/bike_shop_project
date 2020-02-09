@@ -31,6 +31,14 @@ class Stock
     SqlRunner.run(sql, values)
   end
 
+  def self.find_by_id(id)
+    sql = "SELECT * FROM stock
+    WHERE ID = $1"
+    values= [id]
+    data = SqlRunner.run(sql, values).first
+    return Stock.new(data)
+  end
+
   def self.delete_all()
     sql = "DELETE FROM stock"
     SqlRunner.run(sql)

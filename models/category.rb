@@ -27,6 +27,14 @@ class Category
     SqlRunner.run(sql, values)
   end
 
+  def self.find_by_id(id)
+    sql = "SELECT * FROM categories
+    WHERE ID = $1"
+    values= [id]
+    data = SqlRunner.run(sql, values).first
+    return Category.new(data)
+  end
+
   def self.delete_all
     sql = "DELETE FROM categories"
     SqlRunner.run(sql)

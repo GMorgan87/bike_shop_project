@@ -9,7 +9,7 @@ class Manufacturer
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @contact_details = options['contact_details']
-    @logu_url = options['logo_url']
+    @logo_url = options['logo_url']
   end
 
   def save
@@ -27,6 +27,14 @@ class Manufacturer
     WHERE id = $4"
     values = [@name, @contact_details, @logo_url, @id]
     SqlRunner.run(sql, values)
+  end
+
+  def self.find_by_id(id)
+    sql = "SELECT * FROM manufacturers
+    WHERE ID = $1"
+    values= [id]
+    data = SqlRunner.run(sql, values).first
+    return Manufacturer.new(data)
   end
 
   def self.delete_all()
