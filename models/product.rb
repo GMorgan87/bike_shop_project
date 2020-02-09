@@ -47,6 +47,14 @@ class Product
     SqlRunner.run(sql, values)
   end
 
+  def brand_name
+    sql = "SELECT name FROM manufacturers
+           WHERE id = $1"
+    values = [@manufacturer_id]
+    results = SqlRunner.run(sql, values).first
+    return "#{results['name']} - #{@name}"
+  end
+
 
   def self.find_by_id(id)
     sql = "SELECT * FROM products

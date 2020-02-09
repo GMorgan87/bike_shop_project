@@ -180,7 +180,7 @@ product14 = Product.new(
   'category_id' => cat_downhill.id)
 product14.save()
 
-p Category.find_by_id(cat_gravel.id)
+p product1.brand_name()
 
 
 stock1 = Stock.new(
