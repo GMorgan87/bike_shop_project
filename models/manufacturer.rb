@@ -3,28 +3,29 @@ require_relative('../db/sql_runner')
 class Manufacturer
 
   attr_reader :id
-  attr_accessor :name, :contact_details
+  attr_accessor :name, :contact_details, :logo_url
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @contact_details = options['contact_details']
+    @logu_url = options['logo_url']
   end
 
   def save
     sql = "INSERT INTO manufacturers
-    (name, contact_details) VALUES ($1, $2)
+    (name, contact_details, logo_url) VALUES ($1, $2, $3)
     RETURNING id"
-    values = [@name, @contact_details]
+    values = [@name, @contact_details, @logo_url]
     results = SqlRunner.run(sql, values)
     @id = results.first['id'].to_i
   end
 
   def update
     sql = "UPDATE manufacturers SET
-    (name, contact_details) = ($1, $2)
-    WHERE id = $3"
-    values = [@name, @contact_details, @id]
+    (name, contact_details, logo_url) = ($1, $2, $3)
+    WHERE id = $4"
+    values = [@name, @contact_details, @logo_url, @id]
     SqlRunner.run(sql, values)
   end
 

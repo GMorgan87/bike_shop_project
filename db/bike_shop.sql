@@ -6,7 +6,8 @@ DROP TABLE categories;
 CREATE TABLE manufacturers (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
-  contact_details TEXT
+  contact_details TEXT,
+  logo_url TEXT
 );
 
 CREATE TABLE categories (

@@ -9,39 +9,45 @@ Product.delete_all()
 Manufacturer.delete_all()
 Category.delete_all()
 
-category1 = Category.new('name' => 'Road')
-category1.save()
-category2 = Category.new('name' => 'Gravel')
-category2.save()
-category3 = Category.new('name' => 'Hardtail')
-category3.save()
-category4 = Category.new('name' => 'Enduro')
-category4.save()
+cat_road = Category.new('name' => 'Road')
+cat_road.save()
+cat_gravel = Category.new('name' => 'Gravel')
+cat_gravel.save()
+cat_hardtail = Category.new('name' => 'Hardtail')
+cat_hardtail.save()
+cat_enduro = Category.new('name' => 'Enduro')
+cat_enduro.save()
+cat_downhill = Category.new('name' => 'Downhill')
+cat_downhill.save()
 
-manufacturer1 = Manufacturer.new(
+
+canyon = Manufacturer.new(
   'name' => 'Canyon',
-  'contact_details' => 'orders@canyon.com')
-  manufacturer1.save()
-manufacturer2 = Manufacturer.new(
+  'contact_details' => 'orders@canyon.com',
+  'logo_url' => '../public/canyon_logo')
+  canyon.save()
+cotic = Manufacturer.new(
   'name' => 'Cotic',
-  'contact_details' => 'info@cotic.com')
-  manufacturer2.save()
-manufacturer3 = Manufacturer.new(
+  'contact_details' => 'info@cotic.com',
+  'logo_url' => '../public/cotic_logo')
+  cotic.save()
+genesis = Manufacturer.new(
   'name' => 'Genesis',
-  'contact_details' => '0800 529504')
-  manufacturer3.save()
+  'contact_details' => '0800 529504',
+  'logo_url' => '../public/genesis_logo')
+  genesis.save()
 
-product1 = Product.new(
+spectral = Product.new(
   'name' => 'Spectral',
   'description' => 'The Spectral is simply unmatched in its class […]. Handling and suspension are superb throughout the whole range.',
   'buy_cost' => 1700,
   'sell_price' => 2200,
-  'manufacturer_id' => manufacturer1.id,
-  'category_id' => category4.id)
-product1.save()
+  'manufacturer_id' => canyon.id,
+  'category_id' => cat_enduro.id)
+spectral.save()
 
 stock1 = Stock.new(
-  'product_id' => product1.id,
+  'product_id' => spectral.id,
   'quantity' => 5)
 stock1.save()
 
