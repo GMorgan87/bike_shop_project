@@ -9,10 +9,10 @@ class Product
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @description = options['description']
-    @buy_cost = options['buy_cost']
-    @sell_price = options['sell_price']
-    @manufacturer_id = options['manufacturer_id']
-    @category_id = options['category_id']
+    @buy_cost = options['buy_cost'].to_i
+    @sell_price = options['sell_price'].to_i
+    @manufacturer_id = options['manufacturer_id'].to_i
+    @category_id = options['category_id'].to_i
   end
 
   def save
