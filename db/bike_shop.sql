@@ -27,6 +27,6 @@ CREATE TABLE products (
 
 CREATE TABLE stock (
   id SERIAL PRIMARY KEY,
-  product_id INT REFERENCES products(id),
+  product_id INT REFERENCES products(id) ON DELETE CASCADE,
   quantity INT
 );

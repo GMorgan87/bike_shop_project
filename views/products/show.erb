@@ -7,3 +7,7 @@
 <h3>Sell Price: £<%= @product.sell_price %></h3>
 <h3>Profit Margin: £<%= @product.profit_margin %></h3>
 <h3>Quantity: <%= @product.quantity %> <%= @product.status %>  </h3>
+
+<form method ="post" action="/products/<%=@product.id %>/delete">
+    <input type="submit" value=Delete Product" />
+  </form>
