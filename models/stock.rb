@@ -31,6 +31,23 @@ class Stock
     SqlRunner.run(sql, values)
   end
 
+  def buy
+    #
+  end
+
+  def sell
+    #
+  end
+
+
+  def status
+    if @quantity <= 3
+      return "low"
+    elsif @quantity = 0
+      return "out"
+    end
+  end
+
   def self.find_by_id(id)
     sql = "SELECT * FROM stock
     WHERE ID = $1"

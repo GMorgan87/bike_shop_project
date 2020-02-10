@@ -185,8 +185,78 @@ p product1.brand_name()
 
 stock1 = Stock.new(
   'product_id' => product1.id,
-  'quantity' => 5)
+  'quantity' => 2)
 stock1.save()
+
+stock2 = Stock.new(
+  'product_id' => product2.id,
+  'quantity' => 3)
+stock2.save()
+
+stock3 = Stock.new(
+  'product_id' => product3.id,
+  'quantity' => 8)
+stock3.save()
+
+stock4 = Stock.new(
+  'product_id' => product4.id,
+  'quantity' => 4)
+stock4.save()
+
+stock5 = Stock.new(
+  'product_id' => product5.id,
+  'quantity' => 1)
+stock5.save()
+
+stock6 = Stock.new(
+  'product_id' => product6.id,
+  'quantity' => 7)
+stock6.save()
+
+stock7 = Stock.new(
+  'product_id' => product7.id,
+  'quantity' => 3)
+stock7.save()
+
+stock8 = Stock.new(
+  'product_id' => product8.id,
+  'quantity' => 3)
+stock8.save()
+
+stock9 = Stock.new(
+  'product_id' => product9.id,
+  'quantity' => 6)
+stock9.save()
+
+stock10 = Stock.new(
+  'product_id' => product10.id,
+  'quantity' => 9)
+stock10.save()
+
+stock11 = Stock.new(
+  'product_id' => product11.id,
+  'quantity' => 4)
+stock11.save()
+
+stock12 = Stock.new(
+  'product_id' => product12.id,
+  'quantity' => 5)
+stock12.save()
+
+stock13 = Stock.new(
+  'product_id' => product13.id,
+  'quantity' => 3)
+stock13.save()
+
+stock14 = Stock.new(
+  'product_id' => product14.id,
+  'quantity' => 5)
+stock14.save()
+
+
+
+
+
 
 binding.pry
 nil

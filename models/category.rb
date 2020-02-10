@@ -27,7 +27,7 @@ class Category
     SqlRunner.run(sql, values)
   end
 
-  def self.find_by_id(id)
+  def self.find(id)
     sql = "SELECT * FROM categories
     WHERE ID = $1"
     values= [id]
