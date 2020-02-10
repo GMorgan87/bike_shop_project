@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('./product')
 
 class Category
 
@@ -25,6 +26,15 @@ class Category
     WHERE id = $2"
     values = [@name, @id]
     SqlRunner.run(sql, values)
+  end
+
+  def products
+    sql = "SELECT * FROM products
+            WHERE category_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    products = results.map {|data| Product.new(data)}
+    return products
   end
 
   def self.find(id)

@@ -180,7 +180,6 @@ product14 = Product.new(
   'category_id' => cat_downhill.id)
 product14.save()
 
-p product1.brand_name()
 
 
 stock1 = Stock.new(
@@ -252,7 +251,6 @@ stock14 = Stock.new(
   'product_id' => product14.id,
   'quantity' => 5)
 stock14.save()
-
 
 
 

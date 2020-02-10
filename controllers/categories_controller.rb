@@ -1,7 +1,3 @@
-require('sinatra')
-require('sinatra/contrib/all')
-require_relative('../models/category')
-also_reload('../../models/*')
 
 get '/categories' do
   @categories = Category.all
@@ -9,6 +5,7 @@ get '/categories' do
 end
 
 get '/categories/:id' do
-  @category = Category.find(params['id'].to_i)
+  @category = Category.find(params[:id].to_i)
+  @products = @category.products
   erb( :"categories/show" )
 end

@@ -43,7 +43,7 @@ class Stock
   def status
     if @quantity <= 3
       return "low"
-    elsif @quantity = 0
+    elsif @quantity == 0
       return "out"
     end
   end

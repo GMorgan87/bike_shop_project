@@ -55,6 +55,17 @@ class Product
     return "#{results['name']} - #{@name}"
   end
 
+  def category
+    sql = "SELECT name FROM categories
+           WHERE id = $1"
+    values = [@category_id]
+    return SqlRunner.run(sql, values).first['name']
+  end
+
+  def profit_margin
+    return @sell_price - @buy_cost
+  end
+
 
   def self.find_by_id(id)
     sql = "SELECT * FROM products
