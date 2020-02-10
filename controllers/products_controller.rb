@@ -8,8 +8,21 @@ get '/products/:id' do
   erb( :"products/show" )
 end
 
+get '/products/:id/edit' do
+  @manufacturers = Manufacturer.all
+  @categories = Category.all
+  @product = Product.find(params[:id].to_i)
+  erb(:"products/edit")
+end
+
 post '/products/:id/delete' do
   product = Product.find( params[:id] )
   product.delete()
   redirect to '/products'
+end
+
+post '/products/:id' do
+  product = Product.new(params)
+  product.update
+  redirect to "/products/#{params['id']}"
 end

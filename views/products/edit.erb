@@ -1,0 +1,39 @@
+<h2>Edit <%= @product.brand_name %></h2>
+
+<form method="POST" action="/products/<%= @product.id %>">
+
+  <label for="name">Name:</label>
+    <input type="text" name="name" id="name" value="<%=@product.name %>"/>
+<br/>
+  <label for="description">Description:</label>
+    <input type="text" name="description" id="description" value="<%=@product.description %>"/>
+<br/>
+  <label for="logo_url">Buy Cost:</label>
+    <input type="number" min=0 name="buy_cost" id="buy_cost" value="<%=@product.buy_cost %>"/>
+<br/>
+  <label for="logo_url">Sell Price:</label>
+    <input type="number" min=0 name="sell_price" id="sell_price" value="<%=@product.sell_price %>"/>
+<br/>
+  <label for="manufacturer_select">Select Manufacturer:</label>
+    <select name="manufacturer_id" id="manufacturer_select" selected="<%= @product.manufacturer_id  %>">
+      <% @manufacturers.each do |manufacturer| %>
+        <% if manufacturer.id == @product.manufacturer_id %>
+          <option value=<%= manufacturer.id %> selected><%= manufacturer.name %></option>
+        <% else %>
+          <option value=<%= manufacturer.id %>><%= manufacturer.name %></option>
+        <% end %>
+      <% end %>
+    </select>
+<br/>
+    <label for="category_select">Select Category:</label>
+      <select name="category_id" id="category_select" selected="<%= @product.category_id  %>">
+        <% @categories.each do |category| %>
+          <% if category.id == @product.category_id %>
+            <option value=<%= category.id %> selected><%= category.name %></option>
+          <% else %>
+            <option value=<%= category.id %>><%= category.name %></option>
+          <% end %>
+        <% end %>
+      </select>
+<br/>
+  <input type="submit" value="Update Product"/>

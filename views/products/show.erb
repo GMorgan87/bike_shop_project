@@ -8,6 +8,8 @@
 <h3>Profit Margin: £<%= @product.profit_margin %></h3>
 <h3>Quantity: <%= @product.quantity %> <%= @product.status %>  </h3>
 
+<a href="/products/<%= @product.id %>/edit">Edit</a>
+
 <form method ="post" action="/products/<%=@product.id %>/delete">
     <input type="submit" value=Delete Product" />
   </form>
