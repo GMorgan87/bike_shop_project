@@ -9,3 +9,8 @@ get '/categories/:id' do
   @products = @category.products
   erb( :"categories/show" )
 end
+
+get '/categories/:id/edit' do
+  @category = Category.find(params[:id].to_i)
+
+end

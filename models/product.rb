@@ -75,12 +75,19 @@ class Product
   end
 
   def brand_logo
-    sql = "SELECT logo_url FROM manufacturer
+    sql = "SELECT logo_url FROM manufacturers
            WHERE id = $1"
     values = [@manufacturer_id]
     results = SqlRunner.run(sql, values).first
     return results['logo_url']
+  end
 
+  def status
+    if quantity <= 3
+      return "low"
+    elsif quantity == 0
+      return "out"
+    end
   end
 
   def self.find(id)
