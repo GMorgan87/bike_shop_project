@@ -1,0 +1,14 @@
+<h2>Edit <%= @manufacturer.name %></h2>
+
+<form method="POST" action="/manufacturers/<%= @manufacturer.id %>">
+
+  <label for="name">Name:</label>
+    <input type="text" name="name" id="name" value="<%=@manufacturer.name %>"/>
+
+  <label for="contact_details">Contact Details:</label>
+    <input type="text" name="contact_details" id="contact_details" value="<%=@manufacturer.contact_details %>"/>
+
+  <label for="logo_url">Contact Details:</label>
+    <input type="text" name="logo_url" id="logo_url" value="<%=@manufacturer.logo_url %>"/>
+
+  <input type="submit" value="Update Manufacturer"/>

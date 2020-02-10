@@ -15,12 +15,12 @@ get '/categories/:id/edit' do
   erb(:"categories/edit")
 end
 
+
 post '/categories/:id/delete' do
   category = Category.find( params[:id] )
   category.delete()
   redirect to '/categories'
 end
-
 
 post '/categories/:id' do
   category = Category.new(params)

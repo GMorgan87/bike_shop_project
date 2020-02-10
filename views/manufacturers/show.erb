@@ -1,6 +1,6 @@
-<h1><%= @manufacturer.name %></h1>
+<img src="/<%= @manufacturer.logo_url %>"/>
 <h2>Contact Details: <%= @manufacturer.contact_details %> </h2>
-
+<hr/>
 <p>Bikes:</p>
 <ul>
   <% for product in @products %>
@@ -13,6 +13,8 @@
   <hr/>
   <% end %>
 </ul>
+
+<a href="/manufacturers/<%= @manufacturer.id %>/edit">Edit</a>
 
 <form method ="post" action="/manufacturers/<%=@manufacturer.id %>/delete">
     <input type="submit" value=Delete Manufacturer" />
