@@ -1,0 +1,7 @@
+<h1>Manufacturers</h1>
+<ul>
+  <% for manufacturer in @manufacturers %>
+    <li><p><a href="/manufacturers/<%= manufacturer.id %>"><%= manufacturer.name %></a></p></li>
+    <br/>
+    <% end %>
+</ul>
