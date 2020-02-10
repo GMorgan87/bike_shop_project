@@ -11,6 +11,13 @@ get '/categories/:id' do
 end
 
 get '/categories/:id/edit' do
+  @manufacturers = Manufacturer.all
+  @categories = Category.all
   @category = Category.find(params[:id].to_i)
+end
 
+post '/categories/:id/delete' do
+  category = Category.find( params[:id] )
+  category.delete()
+  redirect to '/categories'
 end
