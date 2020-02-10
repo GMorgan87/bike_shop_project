@@ -21,8 +21,8 @@ CREATE TABLE products (
   description TEXT,
   buy_cost INT,
   sell_price INT,
-  manufacturer_id INT REFERENCES manufacturers(id),
-  category_id INT REFERENCES categories(id)
+  manufacturer_id INT REFERENCES manufacturers(id) ON DELETE CASCADE,
+  category_id INT REFERENCES categories(id) ON DELETE CASCADE
 );
 
 CREATE TABLE stock (

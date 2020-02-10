@@ -38,6 +38,12 @@ class Manufacturer
     return results.map {|data| Product.new(data)}
   end
 
+  def delete
+    sql = "DELETE FROM manufacturers WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.find(id)
     sql = "SELECT * FROM manufacturers
     WHERE ID = $1"

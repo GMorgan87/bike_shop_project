@@ -8,3 +8,9 @@ get '/manufacturers/:id' do
   @products = @manufacturer.products
   erb( :"manufacturers/show" )
 end
+
+post '/manufacturers/:id/delete' do
+  manufacturer = Manufacturer.find( params[:id] )
+  manufacturer.delete()
+  redirect to '/manufacturers'
+end
