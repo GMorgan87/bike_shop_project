@@ -66,8 +66,24 @@ class Product
     return @sell_price - @buy_cost
   end
 
+  def quantity
+    sql = "SELECT quantity FROM stock
+           WHERE product_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values).first
+    return results['quantity'].to_i
+  end
 
-  def self.find_by_id(id)
+  def brand_logo
+    sql = "SELECT logo_url FROM manufacturer
+           WHERE id = $1"
+    values = [@manufacturer_id]
+    results = SqlRunner.run(sql, values).first
+    return results['logo_url']
+
+  end
+
+  def self.find(id)
     sql = "SELECT * FROM products
     WHERE ID = $1"
     values= [id]

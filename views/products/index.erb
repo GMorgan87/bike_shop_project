@@ -1,12 +1,8 @@
 <p>Bikes:</p>
 <ul>
   <% for product in @products %>
-  <li><p>Name: <%= product.brand_name %> </p></li>
-  <li><p>Description: <%= product.description %> </p></li>
-  <li><p>Buy Cost: £<%= product.buy_cost %> </p></li>
-  <li><p>Sell Price: £<%= product.sell_price %> </p></li>
-  <li><p>Profit Margin: £<%= product.profit_margin %> </p></li>
-  <li><p>Category: <%= product.category %> </p></li>
+  <li><p>Name: <a href="/products/<%= product.id %>"><%= product.brand_name %></a></p></li>
+  <li><p>Quantity: <%= product.quantity %> </p></li>
   <hr/>
   <% end %>
 </ul>

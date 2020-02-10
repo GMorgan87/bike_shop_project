@@ -1,7 +1,7 @@
 <h1>Manufacturers</h1>
 <ul>
   <% for manufacturer in @manufacturers %>
-    <li><p><a href="/manufacturers/<%= manufacturer.id %>"><%= manufacturer.name %></a></p></li>
+    <li><a href="/manufacturers/<%= manufacturer.id %>"> <img src="<%= manufacturer.logo_url %>"/></a></li>
     <br/>
     <% end %>
 </ul>

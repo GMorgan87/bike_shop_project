@@ -24,32 +24,32 @@ cat_downhill.save()
 canyon = Manufacturer.new(
   'name' => 'Canyon',
   'contact_details' => 'orders@canyon.com',
-  'logo_url' => '../public/canyon_logo')
+  'logo_url' => 'canyon_logo.png')
 canyon.save()
 cotic = Manufacturer.new(
   'name' => 'Cotic',
   'contact_details' => 'info@cotic.com',
-  'logo_url' => '../public/cotic_logo')
+  'logo_url' => 'cotic_logo.png')
 cotic.save()
 genesis = Manufacturer.new(
   'name' => 'Genesis',
   'contact_details' => '0800 529504',
-  'logo_url' => '../public/genesis_logo')
+  'logo_url' => 'genesis_logo.png')
 genesis.save()
 cannondale = Manufacturer.new(
   'name' => 'Cannondale',
   'contact_details' => 'orders@cannondale.com',
-  'logo_url' => '../public/cannondale_logo')
+  'logo_url' => 'cannondale_logo.jpg')
 cannondale.save()
 cube = Manufacturer.new(
   'name' => 'Cube',
   'contact_details' => 'info@cube.com',
-  'logo_url' => '../public/cube_logo')
+  'logo_url' => 'cube_logo.jpg')
 cube.save()
 trek = Manufacturer.new(
   'name' => 'Trek',
   'contact_details' => 'orders@trek.com',
-  'logo_url' => '../public/norco_logo')
+  'logo_url' => 'trek_logo.jpg')
 trek.save()
 
 
