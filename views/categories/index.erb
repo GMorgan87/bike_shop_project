@@ -1,9 +1,17 @@
-<h1>Categories</h1>
-<ul>
-  <% for category in @categories %>
-    <li><p><a href="/categories/<%= category.id %>"><%= category.name %></a></p></li>
-    <br/>
-    <% end %>
-</ul>
+<div class="cat_index">
+  <div class="categories">
+    <p>CATEGORIES</p>
+  </div>
+  <ul>
+    <div class="container">
+      <% for category in @categories %>
+      <div class="cat_item"><li><p><a href="/categories/<%= category.id %>"><%= category.name.upcase %></a></p></li></div>
+      <br/>
+      <% end %>
+      </div>
+  </ul>
 
-<a href="/categories/new">Add Category</a>
+  <div class="cat-edit">
+    <a href="/categories/new">Add Category</a>
+  </div>
+</div>

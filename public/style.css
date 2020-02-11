@@ -2,8 +2,36 @@
   height: 70px;
 }
 
+* {
+  margin: 0;
+}
+
+.homepage {
+  background-image: url("homepage_background.jpg");
+  background-size: cover;
+  position: relative;
+  /* width: 100%; */
+  height: 550px;
+  margin: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  }
+
+.homepage h1 {
+  font-family: impact;
+  font-size: 14em;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 60%;
+  left: -1.5%;
+  white-space: nowrap;
+}
+
 .filters {
   display: flex;
+  background-color: #22333B;
+  color: white;
 }
 .filter-form {
   justify-content: flex-start;
@@ -12,8 +40,12 @@
 }
 
 .manu_index {
-  display: flex;
+  text-align: center;
   justify-content: center;
+}
+
+.manu_index h2 {
+  text-align: center;
 }
 
 .manu_item {
@@ -21,8 +53,80 @@
   justify-content: center;
 }
 
+.cat_index {
+  text-align: center;
+  justify-content: center;
+}
+
+.cat_item {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 250px;
+  height: 50px;
+  border: 1px solid black;
+  color: white;
+  background-color: black;
+}
+
+.cat_item p {
+  font-family: impact;
+  font-weight: bold;
+  font-size: 2.5em;
+  padding-top: 12px;
+}
+
+.cat_edit {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 250px;
+  height: 50px;
+  border: 1px solid black;
+  color: white;
+  background-color: black;
+}
+
+.cat_edit a {
+  font-family: impact;
+  font-weight: bold;
+  font-size: 2.5em;
+  padding-top: 12px;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 55px;
+  border: 1px solid black;
+  color: white;
+  background-color: #22333B;
+}
+
+.categories p {
+  font-family: impact;
+  font-weight: bold;
+  font-size: 3em;
+  padding-top: 12px;
+}
+
+.cat_item a, a.visited{
+  color: #fff;
+  text-decoration: none;
+}
+
+.container {
+  padding-top: 2em;
+  display: block;
+  justify-content: center;
+}
+
 ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 li {
@@ -51,21 +155,20 @@ p, h1, h2, h3, a, th, td {
 
 nav ul {
   list-style-type: none;
-  margin: 0 1%;
   padding: 0;
-  background-color: #333;
-  width: 98%;
+  background-color: #000;
+  width: 100%;
   align-content: center;
 }
 
-a, a.visited{
+/* a, a.visited{
   color: #000;
   text-decoration: none;
-}
+} */
 
 .bikes a
 {
-    display:block;
+  display:block;
 }
 
 nav li a {
@@ -75,8 +178,12 @@ nav li a {
   width: 30%;
   height: 20px;
   text-align: center;
-  font-family: sans-serif;
-  border: 1px solid #444;
+  font-family: impact;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background-color: #22333B;
 }
 
 .dropdown-content {

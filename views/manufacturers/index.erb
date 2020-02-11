@@ -1,10 +1,12 @@
 <div class="manu_index">
 <h2>Manufacturers</h2>
 <ul>
+  <div class="container">
   <% for manufacturer in @manufacturers %>
     <div class=manu_item"><li><a href="/manufacturers/<%= manufacturer.id %>" > <img src="<%= manufacturer.logo_url %>" id="list-logo"/></a></li></div>
     <br/>
     <% end %>
+</div >
 </ul>
 
 <a href="/manufacturers/new">Add Manufacturer</a>
