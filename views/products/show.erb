@@ -19,7 +19,9 @@
     <input type="submit" value="Buy" />
   </form>
 
+<% if @product.quantity > 0 %>
 <form method ="post" action="/products/<%=@product.id %>/sell">
     <input type="num" min=0 name="sell_amount">
     <input type="submit" value="Sell" />
   </form>
+  <% end %>

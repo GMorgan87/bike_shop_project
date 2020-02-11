@@ -83,10 +83,10 @@ class Product
   end
 
   def status
-    if quantity <= 3
-      return "low"
+    if quantity <= 3 && quantity > 0
+      return "LOW"
     elsif quantity == 0
-      return "out"
+      return "OUT"
     end
   end
 
