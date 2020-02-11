@@ -1,9 +1,10 @@
 <h1>Manufacturers</h1>
 <ul>
   <% for manufacturer in @manufacturers %>
-    <li><a href="/manufacturers/<%= manufacturer.id %>"> <img src="<%= manufacturer.logo_url %>"/></a></li>
+    <li><a href="/manufacturers/<%= manufacturer.id %>" > <img src="<%= manufacturer.logo_url %>" id="list-logo" /></a></li>
     <br/>
     <% end %>
 </ul>
+
 
 <a href="/manufacturers/new">Add Manufacturer</a>

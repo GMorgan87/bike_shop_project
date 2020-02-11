@@ -93,9 +93,9 @@ class Product
 
   def status
     if quantity <= 3 && quantity > 0
-      return "LOW"
+      return "LOW STOCK"
     elsif quantity == 0
-      return "OUT"
+      return "OUT OF STOCK"
     end
   end
 
@@ -132,6 +132,14 @@ class Product
   def self.delete_all()
     sql = "DELETE FROM products"
     SqlRunner.run(sql)
+  end
+
+  def self.filter_manufacturer(id)
+    sql = "SELECT * FROM products
+           WHERE manufacturer_id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return results.map {|data| Product.new(data)}
   end
 
   def self.all

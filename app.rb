@@ -8,6 +8,7 @@ require_relative('controllers/categories_controller')
 require_relative('controllers/manufacturers_controller')
 require_relative('controllers/products_controller')
 also_reload('../models/*')
+also_reload('../public/style.css')
 
 get '/' do
   erb( :index )

@@ -5,12 +5,18 @@ get '/products' do
   erb(:"products/index")
 end
 
+get '/products/manufacturer/' do
+  @manufacturers = Manufacturer.all
+  @categories = Category.all
+  @products = Product.filter_manufacturer(params['manufacturer_id'])
+  erb(:"products/index")
+end
+
 get '/products/new' do
   @manufacturers = Manufacturer.all
   @categories = Category.all
   erb(:"products/new")
 end
-
 
 get '/products/:id' do
   @product = Product.find(params[:id].to_i)
