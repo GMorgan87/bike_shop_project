@@ -1,5 +1,5 @@
 <p>Bikes:</p>
-<form method="get" action="/products?manufacturer=canyon">
+<!-- <form method="get" action="/products?manufacturer=canyon">
 <label for="manufacturer_select">Filter by  Manufacturer:</label>
   <select name="manufacturer_id" id="manufacturer_select">
     <option value="all">-</option>
@@ -14,13 +14,20 @@
           <option value=<%= category.id %>><%= category.name %></option>
         <% end %>
     </select>
-    <input type="submit" value="Filter Product"/>
-<ul>
+    <input type="submit" value="Filter Product"/> -->
 
+
+<ul>
 
   <% for product in @products %>
   <li><p>Name: <a href="/products/<%= product.id %>"><%= product.brand_name %></a></p></li>
   <li><p>Quantity: <%= product.quantity %> </p></li>
+  <li><p>Category: <%= product.category %> Bike</p>
+  <li><p>Description: <%= product.description %></p>
+  <li><p>Buy Cost: £<%= product.buy_cost %></p>
+  <li><p>Sell Price: £<%= product.sell_price %></p>
+  <li><p>Profit Margin: £<%= product.profit_margin %></p>
+  <li><p>Quantity: <%= product.quantity %> <%= product.status %>  </p>
   <hr/>
   <% end %>
 </ul>

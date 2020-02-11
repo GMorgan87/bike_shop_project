@@ -23,6 +23,18 @@ post '/products/:id/delete' do
   redirect to '/products'
 end
 
+post '/products/:id/buy' do
+  product = Product.find(params[:id])
+  product.buy(params[:buy_amount])
+  redirect to "/products/#{params['id']}"
+end
+
+post  '/products/:id/sell' do
+  product = Product.find(params[:id])
+  product.sell(params[:sell_amount])
+  redirect to "/products/#{params['id']}"
+end
+
 post '/products/:id' do
   product = Product.new(params)
   product.update

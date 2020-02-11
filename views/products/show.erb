@@ -13,3 +13,13 @@
 <form method ="post" action="/products/<%=@product.id %>/delete">
     <input type="submit" value=Delete Product" />
   </form>
+
+<form method ="post" action="/products/<%=@product.id %>/buy">
+    <input type="num" min=0 name="buy_amount">
+    <input type="submit" value="Buy" />
+  </form>
+
+<form method ="post" action="/products/<%=@product.id %>/sell">
+    <input type="num" min=0 name="sell_amount">
+    <input type="submit" value="Sell" />
+  </form>
