@@ -90,6 +90,22 @@ class Product
     end
   end
 
+  def stock
+    sql = "SELECT * FROM stock
+    WHERE product_id = $1"
+    values= [@id]
+    data = SqlRunner.run(sql, values).first
+    return Stock.new(data)
+  end
+
+  def buy(amount)
+    stock.update_quantity(amount.to_i)
+  end
+
+  def sell(amount)
+    stock.update_quantity(-amount.to_i)
+  end
+
   def delete
     sql = "DELETE FROM products WHERE id = $1"
     values = [@id]

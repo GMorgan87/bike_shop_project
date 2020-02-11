@@ -1,5 +1,23 @@
 <p>Bikes:</p>
+<form method="get" action="/products?manufacturer=canyon">
+<label for="manufacturer_select">Filter by  Manufacturer:</label>
+  <select name="manufacturer_id" id="manufacturer_select">
+    <option value="all">-</option>
+    <% @manufacturers.each do |manufacturer| %>
+        <option value=<%= manufacturer.id %>><%= manufacturer.name %></option>
+      <% end %>
+  </select>
+  <label for="category_select">Filter by Category:</label>
+    <select name="category_id" id="category_select"
+      <option value="all">-</option>
+      <% @categories.each do |category| %>
+          <option value=<%= category.id %>><%= category.name %></option>
+        <% end %>
+    </select>
+    <input type="submit" value="Filter Product"/>
 <ul>
+
+
   <% for product in @products %>
   <li><p>Name: <a href="/products/<%= product.id %>"><%= product.brand_name %></a></p></li>
   <li><p>Quantity: <%= product.quantity %> </p></li>

@@ -1,4 +1,6 @@
 get '/products' do
+  @manufacturers = Manufacturer.all
+  @categories = Category.all
   @products = Product.all
   erb(:"products/index")
 end

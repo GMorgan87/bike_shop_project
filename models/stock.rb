@@ -8,7 +8,7 @@ class Stock
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @product_id = options['product_id']
-    @quantity = options['quantity']
+    @quantity = options['quantity'].to_i
   end
 
   def save
@@ -31,15 +31,6 @@ class Stock
     SqlRunner.run(sql, values)
   end
 
-  def buy
-    #
-  end
-
-  def sell
-    #
-  end
-
-
   def status
     if @quantity <= 3
       return "low"
@@ -48,7 +39,12 @@ class Stock
     end
   end
 
-  def self.find_by_id(id)
+  def update_quantity(amount)
+    @quantity += amount.to_i
+    update()
+  end
+
+  def self.find(id)
     sql = "SELECT * FROM stock
     WHERE ID = $1"
     values= [id]
