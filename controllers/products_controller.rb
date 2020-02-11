@@ -12,6 +12,21 @@ get '/products/manufacturer/' do
   erb(:"products/index")
 end
 
+get '/products/category/' do
+  @manufacturers = Manufacturer.all
+  @categories = Category.all
+  @products = Product.filter_category(params['category_id'])
+  erb(:"products/index")
+end
+
+get '/products/stock/' do
+  @manufacturers = Manufacturer.all
+  @categories = Category.all
+  @products = Product.filter_stock(params['stock_status'])
+  erb(:"products/index")
+end
+
+
 get '/products/new' do
   @manufacturers = Manufacturer.all
   @categories = Category.all

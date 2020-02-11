@@ -1,15 +1,66 @@
-<h2>Products:</h2>
+<h2>Products</h2>
 
-<form method="get" action="/products/manufacturer/">
-<label for="manufacturer_select">Filter by  Manufacturer:</label>
-  <select name="manufacturer_id" id="manufacturer_select">
-    <% @manufacturers.each do |manufacturer| %>
-        <option value=<%= manufacturer.id %>><%= manufacturer.name %></option>
+<div class="filters">
+
+  <p>Filter by: </p>
+  <form method="get" action="/products/manufacturer/">
+    <label for="manufacturer_select">Manufacturer:</label>
+    <select name="manufacturer_id" id="manufacturer_select">
+      <% @manufacturers.each do |manufacturer| %>
+          <option value=<%= manufacturer.id %>><%= manufacturer.name %></option>
       <% end %>
-  </select>
-  <input type="submit" value="Filter Products"/>
-  </form>
-  
+    </select>
+    <input type="submit" value="Filter Products"/>
+    </form>
+
+    <form method="get" action="/products/category/">
+      <label for="category_select">Category:</label>
+      <select name="category_id" id="category_select">
+        <% @categories.each do |category| %>
+          <option value=<%= category.id %>><%= category.name %></option>
+          <% end %>
+      </select>
+      <input type="submit" value="Filter Products"/>
+    </form>
+
+    <form method="get" action="/products/stock/">
+      <label for="category_select">Stock status:</label>
+      <select name="stock_status" id="stock_select">
+          <option value="in">In Stock</option>
+          <option value="low">Low Stock</option>
+          <option value="out">Out of Stock</option>
+      </select>
+      <input type="submit" value="Filter Products"/>
+    </form>
+
+</div>
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Manufacturer</th>
+    <th>Description</th>
+    <th>Buy Cost</th>
+    <th>Sell Price</th>
+    <th>Profit Margin</th>
+    <th>Quantity</th>
+    <th>Status</th>
+  </tr>
+  <% for product in @products %>
+  <tr>
+    <td><a href="/products/<%= product.id %>"><%= product.name %></a></td>
+    <td><%= product.manufacturer %></td>
+    <td><%= product.description %></td>
+    <td><%= product.buy_cost %></td>
+    <td><%= product.sell_price %></td>
+    <td><%= product.profit_margin %></td>
+    <td><%= product.quantity %></td>
+    <td><%= product.status %></td>
+  </tr>
+  <% end %>
+</table>
+
 
 
 

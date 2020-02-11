@@ -4,6 +4,9 @@
   display: center
 }
 
+.filters {
+  display: inline;
+}
 
 ul {
   list-style-type: none;

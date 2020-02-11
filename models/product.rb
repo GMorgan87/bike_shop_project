@@ -92,7 +92,7 @@ class Product
   end
 
   def status
-    if quantity <= 3 && quantity > 0
+    if quantity <=  3 && quantity > 0
       return "LOW STOCK"
     elsif quantity == 0
       return "OUT OF STOCK"
@@ -141,6 +141,47 @@ class Product
     results = SqlRunner.run(sql, values)
     return results.map {|data| Product.new(data)}
   end
+
+  def self.filter_category(id)
+    sql = "SELECT * FROM products
+           WHERE category_id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return results.map {|data| Product.new(data)}
+  end
+
+def self.filter_in_stock()
+  sql = "SELECT products.* FROM products INNER JOIN stock ON stock.product_id = products.id WHERE stock.quantity > 0"
+  results = SqlRunner.run(sql)
+  products = results.map {|data| Product.new(data)}
+  return products
+end
+
+def self.filter_out_stock()
+  sql = "SELECT products.* FROM products INNER JOIN stock ON stock.product_id = products.id WHERE stock.quantity < 1"
+  results = SqlRunner.run(sql)
+  products = results.map {|data| Product.new(data)}
+  return products
+end
+
+def self.filter_low_stock()
+  sql = "SELECT products.* FROM products INNER JOIN stock ON stock.product_id = products.id WHERE stock.quantity BETWEEN 0 AND 3"
+  results = SqlRunner.run(sql)
+  products = results.map {|data| Product.new(data)}
+  return products
+end
+
+def self.filter_stock(status)
+  if status == "in"
+    return self.filter_in_stock()
+  end
+  if status == "low"
+    return self.filter_low_stock()
+  end
+  if status == "out"
+    return self.filter_out_stock()
+  end
+end
 
   def self.all
     sql = "SELECT * FROM products"
