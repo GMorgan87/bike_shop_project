@@ -21,7 +21,6 @@
 
   <% for product in @products %>
   <li><p>Name: <a href="/products/<%= product.id %>"><%= product.brand_name %></a></p></li>
-  <li><p>Quantity: <%= product.quantity %> </p></li>
   <li><p>Category: <%= product.category %> Bike</p>
   <li><p>Description: <%= product.description %></p>
   <li><p>Buy Cost: £<%= product.buy_cost %></p>
@@ -31,3 +30,5 @@
   <hr/>
   <% end %>
 </ul>
+
+<a href="/products/new">Add Product</a>

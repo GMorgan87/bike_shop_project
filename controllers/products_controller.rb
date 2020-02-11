@@ -5,6 +5,13 @@ get '/products' do
   erb(:"products/index")
 end
 
+get '/products/new' do
+  @manufacturers = Manufacturer.all
+  @categories = Category.all
+  erb(:"products/new")
+end
+
+
 get '/products/:id' do
   @product = Product.find(params[:id].to_i)
   erb( :"products/show" )
@@ -15,6 +22,13 @@ get '/products/:id/edit' do
   @categories = Category.all
   @product = Product.find(params[:id].to_i)
   erb(:"products/edit")
+end
+
+post '/products' do
+  id = Product.new(params).save
+  product = Product.find(id)
+  product.add_to_stock()
+  redirect to '/products'
 end
 
 post '/products/:id/delete' do

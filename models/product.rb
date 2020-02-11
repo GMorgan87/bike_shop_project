@@ -47,6 +47,10 @@ class Product
     SqlRunner.run(sql, values)
   end
 
+  def add_to_stock
+    Stock.new('product_id' => @id,'quantity' => 0).save
+  end
+
   def brand_name
     sql = "SELECT name FROM manufacturers
            WHERE id = $1"
@@ -72,6 +76,11 @@ class Product
     values = [@id]
     results = SqlRunner.run(sql, values).first
     return results['quantity'].to_i
+    # if results == nil
+    #   return 0
+    # else
+    #   return results['quantity'].to_i
+    # end
   end
 
   def brand_logo
