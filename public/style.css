@@ -1,11 +1,24 @@
 #list-logo {
   height: 70px;
-  width: auto;
-  display: center
 }
 
 .filters {
-  display: inline;
+  display: flex;
+}
+.filter-form {
+  justify-content: flex-start;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+.manu_index {
+  display: flex;
+  justify-content: center;
+}
+
+.manu_item {
+  display: flex;
+  justify-content: center;
 }
 
 ul {
@@ -16,8 +29,24 @@ li {
   display: inline
 }
 
-p, h1, h2, h3, a {
+p, h1, h2, h3, a, th, td {
   font-family: sans-serif;
+}
+
+.bikes {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bikes td, .bikes th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.bikes tr:nth-child(even){background-color: #f2f2f2;}
+
+#status {
+  color: red;
 }
 
 nav ul {
@@ -29,13 +58,22 @@ nav ul {
   align-content: center;
 }
 
+a, a.visited{
+  color: #000;
+  text-decoration: none;
+}
+
+.bikes a
+{
+    display:block;
+}
+
 nav li a {
   display: inline-block;
   color: #fff;
   padding: 8px 16px;
   width: 30%;
   height: 20px;
-  text-decoration: none;
   text-align: center;
   font-family: sans-serif;
   border: 1px solid #444;

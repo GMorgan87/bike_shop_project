@@ -1,17 +1,32 @@
 <h1> <%= @category.name %> </h1>
 
 <p>Bikes:</p>
-<ul>
+
+<table id="bikes">
+  <tr>
+    <th>Name</th>
+    <th>Manufacturer</th>
+    <th>Description</th>
+    <th>Buy Cost</th>
+    <th>Sell Price</th>
+    <th>Profit Margin</th>
+    <th>Quantity</th>
+    <th>Status</th>
+  </tr>
   <% for product in @products %>
-  <li><p>Name: <a href="/products/<%= product.id %>"><%= product.brand_name %></a> </p></li>
-  <li><p>Description: <%= product.description %> </p></li>
-  <li><p>Buy Cost: £<%= product.buy_cost %> </p></li>
-  <li><p>Sell Price: £<%= product.sell_price %> </p></li>
-  <li><p>Profit Margin: £<%= product.profit_margin %> </p></li>
-  <li><p>Category: <%= product.category %> </p></li>
-  <hr/>
+  <tr>
+    <td><a href="/products/<%= product.id %>"><%= product.name %></a></td>
+    <td><%= product.manufacturer %></td>
+    <td><%= product.description %></td>
+    <td><%= product.buy_cost %></td>
+    <td><%= product.sell_price %></td>
+    <td><%= product.profit_margin %></td>
+    <td><%= product.quantity %></td>
+    <td id="status"><%= product.status %></td>
+  </tr>
   <% end %>
-</ul>
+</table>
+
 
 <a href="/categories/<%= @category.id %>/edit">Edit</a>
 

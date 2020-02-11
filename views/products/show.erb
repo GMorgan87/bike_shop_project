@@ -1,12 +1,12 @@
 
 <img src="/<%=@product.brand_logo%>">
-<h1><%= @product.brand_name %></h1>
-<h3>Category: <%= @product.category %> Bike</h3>
+<h3><%= @product.name %></h3>
+<p>Category: <%= @product.category %> Bike</p>
 <p>Description: <%= @product.description %></p>
-<h3>Buy Cost: £<%= @product.buy_cost %></h3>
-<h3>Sell Price: £<%= @product.sell_price %></h3>
-<h3>Profit Margin: £<%= @product.profit_margin %></h3>
-<h3>Quantity: <%= @product.quantity %> <%= @product.status %>  </h3>
+<p>Buy Cost: £<%= @product.buy_cost %></p>
+<p>Sell Price: £<%= @product.sell_price %></p>
+<p>Profit Margin: £<%= @product.profit_margin %></p>
+<p>Quantity: <%= @product.quantity %> <%= @product.status %> </p>
 
 <a href="/products/<%= @product.id %>/edit">Edit</a>
 

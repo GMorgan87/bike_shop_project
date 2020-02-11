@@ -1,42 +1,49 @@
 <h2>Products</h2>
 
 <div class="filters">
+  <aside class="">
+    Filter by:
+  </aside>
+  <div class="filter-form">
+    <form method="get" action="/products/manufacturer">
+      <label for="manufacturer_select">Manufacturer:</label>
+      <select name="manufacturer_id" id="manufacturer_select">
+        <% @manufacturers.each do |manufacturer| %>
+            <option value=<%= manufacturer.id %>><%= manufacturer.name %></option>
+        <% end %>
+      </select>
+      <input type="submit" value="Filter"/>
+      </form>
+  </div>
 
-  <p>Filter by: </p>
-  <form method="get" action="/products/manufacturer/">
-    <label for="manufacturer_select">Manufacturer:</label>
-    <select name="manufacturer_id" id="manufacturer_select">
-      <% @manufacturers.each do |manufacturer| %>
-          <option value=<%= manufacturer.id %>><%= manufacturer.name %></option>
-      <% end %>
+<div class="filter-form">
+  <form method="get" action="/products/category">
+    <label for="category_select">Category:</label>
+    <select name="category_id" id="category_select">
+      <% @categories.each do |category| %>
+        <option value=<%= category.id %>><%= category.name %></option>
+        <% end %>
     </select>
-    <input type="submit" value="Filter Products"/>
-    </form>
+    <input type="submit" value="Filter"/>
+  </form>
+</div>
 
-    <form method="get" action="/products/category/">
-      <label for="category_select">Category:</label>
-      <select name="category_id" id="category_select">
-        <% @categories.each do |category| %>
-          <option value=<%= category.id %>><%= category.name %></option>
-          <% end %>
-      </select>
-      <input type="submit" value="Filter Products"/>
-    </form>
-
-    <form method="get" action="/products/stock/">
-      <label for="category_select">Stock status:</label>
-      <select name="stock_status" id="stock_select">
-          <option value="in">In Stock</option>
-          <option value="low">Low Stock</option>
-          <option value="out">Out of Stock</option>
-      </select>
-      <input type="submit" value="Filter Products"/>
-    </form>
+<div class="filter-form">
+  <form method="get" action="/products/stock">
+    <label for="category_select">Stock status:</label>
+    <select name="stock_status" id="stock_select">
+        <option value="in">In Stock</option>
+        <option value="low">Low Stock</option>
+        <option value="out">Out of Stock</option>
+    </select>
+    <input type="submit" value="Filter"/>
+  </form>
+</div>
 
 </div>
 
 
-<table>
+<table class="bikes">
   <tr>
     <th>Name</th>
     <th>Manufacturer</th>
@@ -56,27 +63,10 @@
     <td><%= product.sell_price %></td>
     <td><%= product.profit_margin %></td>
     <td><%= product.quantity %></td>
-    <td><%= product.status %></td>
+    <td id="status"><%= product.status %></td>
   </tr>
   <% end %>
 </table>
 
-
-
-
-<ul>
-  <% @products %>
-  <% for product in @products %>
-  <li><p>Name: <a href="/products/<%= product.id %>"><%= product.brand_name %></a></p></li>
-  <li><p>Category: <%= product.category %> Bike</p></li>
-  <li><p>Description: <%= product.description %></p></li>
-  <li><p>Buy Cost: £<%= product.buy_cost %></p></li>
-  <li><p>Sell Price: £<%= product.sell_price %></p></li>
-  <li><p>Profit Margin: £<%= product.profit_margin %></p></li>
-  <li><p>Quantity: <%= product.quantity %></p></li>
-  <li><h3><%= product.status %></h3></li>
-  <hr/>
-  <% end %>
-</ul>
 
 <a href="/products/new">Add Product</a>

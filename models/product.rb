@@ -66,6 +66,13 @@ class Product
     return SqlRunner.run(sql, values).first['name']
   end
 
+  def manufacturer
+    sql = "SELECT name FROM manufacturers
+           WHERE id = $1"
+    values = [@manufacturer_id]
+    return SqlRunner.run(sql, values).first['name']
+  end
+
   def profit_margin
     return @sell_price - @buy_cost
   end
@@ -165,7 +172,7 @@ def self.filter_out_stock()
 end
 
 def self.filter_low_stock()
-  sql = "SELECT products.* FROM products INNER JOIN stock ON stock.product_id = products.id WHERE stock.quantity BETWEEN 0 AND 3"
+  sql = "SELECT products.* FROM products INNER JOIN stock ON stock.product_id = products.id WHERE stock.quantity BETWEEN 1 AND 3"
   results = SqlRunner.run(sql)
   products = results.map {|data| Product.new(data)}
   return products
