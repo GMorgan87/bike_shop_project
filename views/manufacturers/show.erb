@@ -1,17 +1,28 @@
-<img src="/<%= @manufacturer.logo_url %>"/>
-<h2>Contact Details: <%= @manufacturer.contact_details %> </h2>
-<hr/>
-<p>Bikes:</p>
+<div class="manu_details">
+  <img src="/<%= @manufacturer.logo_url %>"/>
+  <br/>
+  <h2>CONTACT DETAILS: <%= @manufacturer.contact_details.upcase %></h2>
 
-<table id="bikes">
+  <div class="add">
+    <a href="/manufacturers/<%= @manufacturer.id %>/edit">EDIT</a>
+  </div>
+
+  <form method ="post" action="/manufacturers/<%=@manufacturer.id %>/delete">
+    <div class="del-btn">
+      <input type="submit" value="DELETE" />
+    </div>
+  </form>
+</div>
+
+<table class="bikes">
   <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Buy Cost</th>
-    <th>Sell Price</th>
-    <th>Profit Margin</th>
-    <th>Quantity</th>
-    <th>Status</th>
+    <th><p>NAME</p></th>
+    <th><p>DESCRIPTION</p></th>
+    <th><p>BUY</p></th>
+    <th><p>SELL</p></th>
+    <th><p>PROFIT</p></th>
+    <th><p>QTY</p></th>
+    <th><p>STATUS</p></th>
   </tr>
   <% for product in @products %>
   <tr>
@@ -25,11 +36,3 @@
   </tr>
   <% end %>
 </table>
-
-
-
-<a href="/manufacturers/<%= @manufacturer.id %>/edit">Edit</a>
-
-<form method ="post" action="/manufacturers/<%=@manufacturer.id %>/delete">
-    <input type="submit" value=Delete Manufacturer" />
-  </form>

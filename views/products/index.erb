@@ -4,11 +4,11 @@
 
 <div class="filters">
   <aside class="">
-    Filter by:
+    FILTER BY:
   </aside>
   <div class="filter-form">
     <form method="get" action="/products/manufacturer">
-      <label for="manufacturer_select">Manufacturer:</label>
+      <label for="manufacturer_select">MANUFACTURER:</label>
       <select name="manufacturer_id" id="manufacturer_select">
         <% @manufacturers.each do |manufacturer| %>
             <option value=<%= manufacturer.id %>><%= manufacturer.name %></option>
@@ -20,7 +20,7 @@
 
 <div class="filter-form">
   <form method="get" action="/products/category">
-    <label for="category_select">Category:</label>
+    <label for="category_select">CATEGORY:</label>
     <select name="category_id" id="category_select">
       <% @categories.each do |category| %>
         <option value=<%= category.id %>><%= category.name %></option>
@@ -32,7 +32,7 @@
 
 <div class="filter-form">
   <form method="get" action="/products/stock">
-    <label for="category_select">Stock status:</label>
+    <label for="category_select">STOCK STATUS:</label>
     <select name="stock_status" id="stock_select">
         <option value="in">In Stock</option>
         <option value="low">Low Stock</option>
@@ -47,14 +47,14 @@
 
 <table class="bikes">
   <tr>
-    <th>Name</th>
-    <th>Manufacturer</th>
-    <th>Description</th>
-    <th>Buy Cost</th>
-    <th>Sell Price</th>
-    <th>Profit Margin</th>
-    <th>Quantity</th>
-    <th>Status</th>
+    <th><p>NAME</p></th>
+    <th><p>MANUFACTURER</p></th>
+    <th><p>DESCRIPTION</p></th>
+    <th><p>BUY</p></th>
+    <th><p>SELL</p></th>
+    <th><p>PROFIT</p></th>
+    <th><p>QTY</p></th>
+    <th><p>STATUS</p></th>
   </tr>
   <% for product in @products %>
   <tr>
@@ -70,5 +70,6 @@
   <% end %>
 </table>
 
-
-<a href="/products/new">Add Product</a>
+<div class="add">
+  <a href="/products/new">Add Product</a>
+</div>

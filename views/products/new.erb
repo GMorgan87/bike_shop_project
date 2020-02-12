@@ -1,3 +1,4 @@
+<div class="add-form">
 <form  method="post" action="/products">
 
     <label for="name">Name:</label>
@@ -18,7 +19,7 @@
     <label for="manufacturer_select">Select Manufacturer:</label>
       <select name="manufacturer_id" id="manufacturer_select">
         <% @manufacturers.each do |manufacturer| %>
-            <option value=<%= manufacturer.id %>><%= manufacturer.name %></option>
+            <option value=<%= manufacturer.id %>><%= manufacturer.name.upcase %></option>
           <% end %>
       </select>
     <br/>
@@ -26,11 +27,14 @@
     <label for="category_select">Select Category:</label>
       <select name="category_id" id="category_select">
         <% @categories.each do |category| %>
-          <option value=<%= category.id %>><%= category.name %></option>
+          <option value=<%= category.id %>><%= category.name.upcase %></option>
         <% end %>
       </select>
     <br/>
 
-    <input type="submit" value="Add Product"/>
+    <div class="add-btn">
+      <input type="submit" value="ADD PRODUCT"/>
+    </div>
 
 </form>
+</div>

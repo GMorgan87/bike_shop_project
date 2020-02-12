@@ -1,4 +1,11 @@
-<h2>Edit <%= @product.brand_name %></h2>
+
+<div class="heading">
+  <p>EDIT <%= @product.brand_name.upcase %></p>
+</div>
+
+<div class="add-form">
+
+
 
 <form method="POST" action="/products/<%= @product.id %>">
 
@@ -6,7 +13,7 @@
     <input type="text" name="name" id="name" value="<%=@product.name %>"/>
 <br/>
   <label for="description">Description:</label>
-    <input type="text" name="description" id="description" value="<%=@product.description %>"/>
+    <input type="text" name="description" id="description" value="<%=@product.description %>" class="desc"/>
 <br/>
   <label for="buy_cost">Buy Cost:</label>
     <input type="number" min=0 name="buy_cost" id="buy_cost" value="<%=@product.buy_cost %>"/>
@@ -36,4 +43,7 @@
         <% end %>
       </select>
 <br/>
-  <input type="submit" value="Update Product"/>
+<div class="add-btn">
+  <input type="submit" value="UPDATE"/>
+</div>
+</div>

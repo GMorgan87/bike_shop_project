@@ -1,3 +1,5 @@
+<div class="add-form">
+
 <h2>Edit <%= @manufacturer.name %></h2>
 
 <form method="POST" action="/manufacturers/<%= @manufacturer.id %>">
@@ -12,3 +14,5 @@
     <input type="text" name="logo_url" id="logo_url" value="<%=@manufacturer.logo_url %>"/>
 
   <input type="submit" value="Update Manufacturer"/>
+
+</div>

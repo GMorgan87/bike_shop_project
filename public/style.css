@@ -6,11 +6,83 @@
   margin: 0;
 }
 
+.add-form {
+  display: flex;
+  justify-content: center;
+  font-family: impact;
+  width: 100%;
+}
+
+.add-form input {
+  width: 100%;
+}
+
+.add-form label {
+  justify-content: center;
+}
+
+.add-btn input {
+    font-family: impact;
+    background-color: black;
+    font-weight: bold;
+    font-size: 1.75em;
+    margin-top: 1em;
+    color: #fff;
+    height: 40px;
+    padding-top: 11px;
+    margin: 0 auto 0;
+    border: none;
+}
+
+.del-btn input {
+    font-family: impact;
+    background-color: #af0000;
+    width: 250px;
+    font-weight: bold;
+    font-size: 2.5em;
+    color: #fff;
+    height: 50px;
+    padding-top: 12px;
+    margin: 0.25em auto 0em;
+    border: none;
+}
+
+.buysell {
+  display: flex;
+  margin: 10px 0;
+}
+
+.buysell input {
+  width: 125px;
+}
+
+.buysell_input {
+  border: 1px solid black;
+  padding: 5px 0;
+}
+
+.buysell-btn input {
+    font-family: impact;
+    background-color: #af0000;
+    width: 125px;
+    font-weight: bold;
+    font-size: 1.25em;
+    color: #fff;
+    height: 25px;
+    padding-top: 5px;
+    margin: 0.25em auto 0em;
+    border: none;
+}
+
+.add-btn input:hover {
+  background-color: #22333B;
+}
+
+
 .homepage {
   background-image: url("homepage_background.jpg");
   background-size: cover;
   position: relative;
-  /* width: 100%; */
   height: 550px;
   margin: 20px;
   background-repeat: no-repeat;
@@ -33,7 +105,11 @@
   font-family: impact;
   background-color: #22333B;
   color: white;
+  margin-bottom: 0.5em;
+  height: 30px;
+  align-content: center;
 }
+
 .filter-form {
   justify-content: flex-start;
   margin-right: 1em;
@@ -52,6 +128,15 @@
 .manu_item {
   display: flex;
   justify-content: center;
+}
+
+.manu_details {
+  width: 100%;
+  font-family: impact;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin: 0px auto 20px;
 }
 
 .cat_index {
@@ -76,10 +161,27 @@
   padding-top: 11px;
 }
 
-.cat-item p {
-
+.new_dropdown {
+  justify-content: right;
 }
 
+.cat-title {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 0.5em;
+  width: 100%;
+  height: 50px;
+  border: 1px solid black;
+  color: white;
+  background-color: #22333B;
+}
+
+.cat-title p {
+  font-family: impact;
+  font-weight: bold;
+  font-size: 3em;
+  padding-top: 5px;
+}
 
 .add {
   display: flex;
@@ -98,12 +200,28 @@
   padding-top: 12px;
 }
 
+.prod_edit {
+  display: flex;
+  justify-content: center;
+  width: 250px;
+  height: 50px;
+  color: white;
+  background-color: #22333B;
+}
+
+.prod_edit a {
+  font-family: impact;
+  font-weight: bold;
+  font-size: 2.5em;
+  padding-top: 12px;
+}
+
 .heading {
   display: flex;
   justify-content: center;
-  margin: 0 auto 0.5em;
+  margin: 0 auto 1em;
   width: 100%;
-  height: 55px;
+  height: 50px;
   border: 1px solid black;
   color: white;
   background-color: #22333B;
@@ -113,7 +231,7 @@
   font-family: impact;
   font-weight: bold;
   font-size: 3em;
-  padding-top: 12px;
+  padding-top: 5px;
 }
 
 .cat_item a, a.visited{
@@ -135,24 +253,38 @@ li {
   display: inline
 }
 
-p, h1, h2, h3, a, th, td {
+td {
   font-family: sans-serif;
+  justify-content: center;
+  font-size: 0.8em;
 }
 
 .bikes {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 0.5em;
 }
 
-.bikes td, .bikes th {
-  border: 1px solid #ddd;
-  padding: 8px;
+.bikes td {
+  border: 1px solid #aaa;
 }
 
-.bikes tr:nth-child(even){background-color: #f2f2f2;}
+.bikes th {
+  background-color: #000;
+  color: white;
+  height: 30px;
+}
+
+.bikes p {
+  font-family: impact;
+  padding-top: 10px;
+}
+
+.bikes tr:nth-child(odd){background-color: #f2f2f2;}
 
 #status {
   color: red;
+  font-weight: bold;
 }
 
 nav ul {
@@ -160,6 +292,7 @@ nav ul {
   justify-content: center;
   width: 100%;
   align-content: center;
+  margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
 
@@ -171,7 +304,27 @@ a, a.visited{
 .bikes a
 {
   display:block;
+  color: black;
 }
+
+.title {
+  color: white;
+  background-color: black;
+}
+
+.prod_details {
+  font-family: impact;
+  font-weight: normal;
+}
+
+.prod_details h3 {
+  font-size: 2em;
+}
+
+.prod_details p {
+  padding-left: 10px;
+}
+
 
 nav li a {
   display: inline-block;

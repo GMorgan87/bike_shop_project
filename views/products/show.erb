@@ -1,27 +1,41 @@
+<div class="prod_details">
 
 <img src="/<%=@product.brand_logo%>">
-<h3><%= @product.name %></h3>
-<p>Category: <%= @product.category %> Bike</p>
-<p>Description: <%= @product.description %></p>
-<p>Buy Cost: £<%= @product.buy_cost %></p>
-<p>Sell Price: £<%= @product.sell_price %></p>
-<p>Profit Margin: £<%= @product.profit_margin %></p>
-<p>Quantity: <%= @product.quantity %> <%= @product.status %> </p>
+<h3><%= @product.name.upcase %></h3>
+<div class="title"><p>CATEGORY:</p></div><p> <%= @product.category %> Bike</p>
+<div class="title"><p>DESCRIPTION:</p></div><p><%= @product.description %></p>
+<div class="title"><p>BUY COST:</p></div><p>£<%= @product.buy_cost %></p>
+<div class="title"><p>SELL PRICE:</p></div><p>£<%= @product.sell_price %></p>
+<div class="title"><p>PROFIT MARGIN:</p></div><p>£<%= @product.profit_margin %></p>
+<div class="title"><p>QUANTITY:</p></div><p><%= @product.quantity %></p><p id="status"><%= @product.status %></p>
 
-<a href="/products/<%= @product.id %>/edit">Edit</a>
+  <div class="prod_edit">
+    <a href="/products/<%= @product.id %>/edit">EDIT</a>
+  </div>
 
 <form method ="post" action="/products/<%=@product.id %>/delete">
+  <div class="del-btn">
     <input type="submit" value=Delete Product" />
+  </div>
   </form>
 
+<div class="buysell">
+
 <form method ="post" action="/products/<%=@product.id %>/buy">
-    <input type="number" min=0 name="buy_amount">
-    <input type="submit" value="Buy" />
+    <input type="number" min=0 name="buy_amount" class="buysell_input">
+    <div class="buysell-btn">
+      <input type="submit" value="Buy" />
+    </div>
   </form>
 
 <% if @product.quantity > 0 %>
 <form method ="post" action="/products/<%=@product.id %>/sell">
-    <input type="number" max="<%= @product.quantity %>" min=0 name="sell_amount">
-    <input type="submit" value="Sell" />
+    <input type="number" max="<%= @product.quantity %>" min=0 name="sell_amount" class="buysell_input">
+    <div class="buysell-btn">
+      <input type="submit" value="Sell" />
+    </div>
   </form>
   <% end %>
+</div>
+
+</div>

@@ -6,12 +6,11 @@
 <ul>
   <div class="container">
     <div class="add">
-      <a href="/manufacturers/new">Add Manufacturer</a>
+      <a href="/manufacturers/new">ADD</a>
     </div>
     <br/>
   <% for manufacturer in @manufacturers %>
     <div class=manu_item"><li><a href="/manufacturers/<%= manufacturer.id %>" > <img src="<%= manufacturer.logo_url %>" id="list-logo"/></a></li></div>
-    <br/>
     <% end %>
 </div >
 </ul>

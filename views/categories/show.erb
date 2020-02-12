@@ -1,17 +1,31 @@
-<h1> <%= @category.name %> </h1>
+<div class="manu_details">
 
-<p>Bikes:</p>
+  <div class="cat-title">
+    <p> <%= @category.name %> </p>
+  </div>
 
-<table id="bikes">
+  <div class="add">
+    <a href="/categories/<%= @category.id %>/edit">EDIT</a>
+  </div>
+
+  <form method ="post" action="/categories/<%=@category.id %>/delete">
+    <div class="del-btn">
+      <input type="submit" value=Delete Category" />
+    </div>
+  </form>
+
+</div>
+
+<table class="bikes">
   <tr>
-    <th>Name</th>
-    <th>Manufacturer</th>
-    <th>Description</th>
-    <th>Buy Cost</th>
-    <th>Sell Price</th>
-    <th>Profit Margin</th>
-    <th>Quantity</th>
-    <th>Status</th>
+    <th><p>NAME</p></th>
+    <th><p>MANUFACTURER</p></th>
+    <th><p>DESCRIPTION</p></th>
+    <th><p>BUY</p></th>
+    <th><p>SELL</p></th>
+    <th><p>PROFIT</p></th>
+    <th><p>QTY</p></th>
+    <th><p>STATUS</p></th>
   </tr>
   <% for product in @products %>
   <tr>
@@ -26,10 +40,3 @@
   </tr>
   <% end %>
 </table>
-
-
-<a href="/categories/<%= @category.id %>/edit">Edit</a>
-
-<form method ="post" action="/categories/<%=@category.id %>/delete">
-    <input type="submit" value=Delete Category" />
-  </form>
