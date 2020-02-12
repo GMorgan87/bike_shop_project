@@ -1,9 +1,14 @@
 <div class="cat_index">
-  <div class="categories">
+  <div class="heading">
     <p>CATEGORIES</p>
   </div>
+
   <ul>
     <div class="container">
+      <div class="add">
+        <a href="/categories/new">ADD CATEGORY</a>
+      </div>
+      <br/>
       <% for category in @categories %>
       <div class="cat_item"><li><p><a href="/categories/<%= category.id %>"><%= category.name.upcase %></a></p></li></div>
       <br/>
@@ -11,7 +16,5 @@
       </div>
   </ul>
 
-  <div class="cat-edit">
-    <a href="/categories/new">Add Category</a>
-  </div>
+
 </div>

@@ -1,7 +1,14 @@
 <div class="manu_index">
-<h2>Manufacturers</h2>
+  <div class="heading">
+    <p>MANUFACTURERS</p>
+  </div>
+
 <ul>
   <div class="container">
+    <div class="add">
+      <a href="/manufacturers/new">Add Manufacturer</a>
+    </div>
+    <br/>
   <% for manufacturer in @manufacturers %>
     <div class=manu_item"><li><a href="/manufacturers/<%= manufacturer.id %>" > <img src="<%= manufacturer.logo_url %>" id="list-logo"/></a></li></div>
     <br/>
@@ -9,5 +16,5 @@
 </div >
 </ul>
 
-<a href="/manufacturers/new">Add Manufacturer</a>
+
 </div>

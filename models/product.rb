@@ -100,9 +100,9 @@ class Product
 
   def status
     if quantity <=  3 && quantity > 0
-      return "LOW STOCK"
+      return "LOW"
     elsif quantity == 0
-      return "OUT OF STOCK"
+      return "OUT"
     end
   end
 

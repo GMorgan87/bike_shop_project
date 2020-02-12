@@ -15,13 +15,13 @@
   </form>
 
 <form method ="post" action="/products/<%=@product.id %>/buy">
-    <input type="num" min=0 name="buy_amount">
+    <input type="number" min=0 name="buy_amount">
     <input type="submit" value="Buy" />
   </form>
 
 <% if @product.quantity > 0 %>
 <form method ="post" action="/products/<%=@product.id %>/sell">
-    <input type="num" min=0 name="sell_amount">
+    <input type="number" max="<%= @product.quantity %>" min=0 name="sell_amount">
     <input type="submit" value="Sell" />
   </form>
   <% end %>

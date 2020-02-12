@@ -74,7 +74,7 @@ product2.save()
 
 product3 = Product.new(
   'name' => 'Ultimate',
-  'description' => "The Ultimate is regarded as one of the best road bikes in the world and for years has represented the pinnacle of Canyon road bike technology. A classic road racer with aero-optimisation, it’s the first choice for ambitious riders.",
+  'description' => "The Ultimate is regarded as one of the best road bikes in the world and for years has represented the pinnacle of Canyon road bike technology.",
   'buy_cost' => 2750,
   'sell_price' => 3250,
   'manufacturer_id' => canyon.id,
@@ -83,7 +83,7 @@ product3.save()
 
 product4 = Product.new(
   'name' => 'Grail',
-  'description' => "Gravel. All road. New road. It’s not about the name, it’s about the opportunities it opens up. The Grail finds the sweet spot between speed and comfort to blow the potential of what, where and how you ride wide open.",
+  'description' => "Gravel. All road. New road.The Grail finds the sweet spot between speed and comfort to blow the potential of what, where and how you ride wide open.",
   'buy_cost' => 1200,
   'sell_price' => 1550,
   'manufacturer_id' => canyon.id,
@@ -101,7 +101,7 @@ product5.save()
 
 product6 = Product.new(
   'name' => 'Sender',
-  'description' => "From the Downhill World Cup’s most technical courses to the most extreme freeride tracks in the Utah desert: to compete against the best, you need the best bike. Get the downhill rig that our pros Troy Brosnan and Thomas Genon rely on when it’s time to put it all on the line: the Sender. Developed for high speeds, big gaps and technical descents.",
+  'description' => "From the Downhill World Cup’s most technical courses to the most extreme freeride tracks in the Utah desert: to compete against the best, you need the best bike.",
   'buy_cost' => 2750,
   'sell_price' => 3500,
   'manufacturer_id' => canyon.id,
@@ -110,7 +110,7 @@ product6.save()
 
 product7 = Product.new(
   'name' => 'CAAD',
-  'description' => "Created using Cannondale’s Tube Flow Modeling design process, CAAD Optimo’s SmartForm C2 Aluminium construction is lighter and has a better ride-feel than many of our competitors’ premium alloy offerings. Elite race geometry with similar geometry to the CAAD13 and SuperSix EVO, CAAD Optimo offers riders true race handling and body position. Ride smoother with SAVE flex zones in the rear triangle and fork absorb shock for better comfort and control. For 2020, all CAAD Optimo models feature new, lightweight forks with full, one-piece carbon construction from dropout thru steerer.",
+  'description' => "Created using Cannondale’s Tube Flow Modeling design process, CAAD Optimo’s SmartForm C2 Aluminium construction is lighter and has a better ride-feel than many of our competitors’ premium alloy offerings.",
   'buy_cost' => 550,
   'sell_price' => 700,
   'manufacturer_id' => cannondale.id,
@@ -119,7 +119,7 @@ product7.save()
 
 product8 = Product.new(
   'name' => 'Synapse',
-  'description' => "Built for big rides and long days in the saddle, the Synapse offers full race performance, allday geometry, wide-ranging capabilities and a micro-suspension system that insulates you from the bumps without isolating you from the experience. It’s a true endurance machine, for true endurance riders. Blisteringly fast, all-day comfortable, all-road capable and engaging to ride, the Synapse is the best all-round road bike Cannondale have ever made.",
+  'description' => "Built for big rides and long days in the saddle, the Synapse offers full race performance, allday geometry, wide-ranging capabilities and a micro-suspension system that insulates you from the bumps without isolating you from the experience.",
   'buy_cost' => 2500,
   'sell_price' => 2800,
   'manufacturer_id' => cannondale.id,
@@ -128,7 +128,7 @@ product8.save()
 
 product9 = Product.new(
   'name' => 'Stereo',
-  'description' => "Big days out in the mountains place big demands on both bike and rider. Luckily the Stereo 140 HPC SL 27.5 is up for the challenge. This carbon and aluminium all mountain machine's svelte looks aren't its only attraction. Years of experience building full-suspension bikes have gone into details like the hidden rocker pivots, neat internal cable routing, superbly efficient kinematics and confidence-inspiring Agile Trail Geometry.",
+  'description' => "Big days out in the mountains place big demands on both bike and rider. Luckily the Stereo 140 HPC SL 27.5 is up for the challenge.",
   'buy_cost' => 2650,
   'sell_price' => 3000,
   'manufacturer_id' => cube.id,
@@ -137,7 +137,7 @@ product9.save()
 
 product10 = Product.new(
   'name' => 'BFe',
-  'description' => "This is our rowdiest hardtail, it will take everything you can throw at it, from BMX track laps to the steepest downhill lines. A BFe sent Crabapple Hits at Whistler! The BFe has always been the tearaway of the Cotic family. The Soul's stockier, rowdier younger brother. You know the one - loads of fun, but a bit on the wild side? That's the BFe.",
+  'description' => "This is our rowdiest hardtail, it will take everything you can throw at it, from BMX track laps to the steepest downhill lines.",
   'buy_cost' => 1250,
   'sell_price' => 1600,
   'manufacturer_id' => cotic.id,
@@ -146,7 +146,7 @@ product10.save()
 
 product11 = Product.new(
   'name' => 'Rocket',
-  'description' => "Whether you're tackling big mountain adventures or the toughest enduro stage, the Rocket will look after you and keep you screaming for more. The best part is, it will happily skip up the toughest of climbs; honed on the tough hills of our native Peak District, the Rocket will get you back up to the top for run after run.",
+  'description' => "Whether you're tackling big mountain adventures or the toughest enduro stage, the Rocket will look after you and keep you screaming for more.",
   'buy_cost' => 1250,
   'sell_price' => 1600,
   'manufacturer_id' => cotic.id,
@@ -155,7 +155,7 @@ product11.save()
 
 product12 = Product.new(
   'name' => 'Croix de Fer',
-  'description' => "Never has one bike been more worthy of the “One bike, many hats” crown. The Croix De Fer has always been and continues to be the most supremely capable and infinitely adaptable bike Genesis make. Their genre-defying, boundary-blurring bestseller returns for another year - evolved, refined and more capable than ever before. The original gravel bike, with the same go-anywhere, do anything attitude that's been instilled since it's conception over ten years ago.",
+  'description' => "Never has one bike been more worthy of the “One bike, many hats” crown. The Croix De Fer has always been and continues to be the most supremely capable and infinitely adaptable bike Genesis make.",
   'buy_cost' => 750,
   'sell_price' => 900,
   'manufacturer_id' => genesis.id,
@@ -164,7 +164,7 @@ product12.save()
 
 product13 = Product.new(
   'name' => 'Delta',
-  'description' => "A comfortable, practical and efficient road bike ideally suited to either newer riders looking to improve their performance or seasoned riders after a faster paced training or winter bike. Thanks to Genesis’s adventure bike expertise it comes with a few other added practical bonuses to keep you riding in comfort, even on British roads, or when the weather takes a turn for the worse.",
+  'description' => "A comfortable, practical and efficient road bike ideally suited to either newer riders looking to improve their performance or seasoned riders after a faster paced training or winter bike.",
   'buy_cost' => 700,
   'sell_price' => 800,
   'manufacturer_id' => genesis.id,
