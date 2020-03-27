@@ -1,4 +1,3 @@
-require('pry-byebug')
 require_relative('../models/category')
 require_relative('../models/manufacturer')
 require_relative('../models/product')
@@ -249,10 +248,3 @@ stock14 = Stock.new(
   'product_id' => product14.id,
   'quantity' => 5)
 stock14.save()
-
-
-
-
-
-binding.pry
-nil
